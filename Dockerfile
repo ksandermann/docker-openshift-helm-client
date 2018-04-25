@@ -37,7 +37,7 @@ COPY --from=builder "~/download/linux-amd64/helm" "/usr/local/bin/helm"
 RUN chmod +x "/usr/local/bin/helm"
 
 COPY --from=builder "~/download/kubectl" "/usr/local/bin/kubectl"
-RUN chmod +x "/usr/local/bin/helm"
+RUN chmod +x "/usr/local/bin/kubectl"
 
 COPY --from=builder "~/download/openshift-origin-client-tools-v3.6.1-008f2d5-linux-64bit" "/usr/local/bin/oc"
 RUN chmod +x "/usr/local/bin/oc"
