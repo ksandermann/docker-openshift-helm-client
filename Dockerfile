@@ -1,5 +1,4 @@
 FROM ubuntu:16.04 as builder
-
 MAINTAINER Kevin Sandermann <kevin.sandermann@gmail.com>
 
 ARG OC_CLI_SOURCE="https://github.com/openshift/origin/releases/download/v3.6.1/openshift-origin-client-tools-v3.6.1-008f2d5-linux-64bit.tar.gz"
@@ -20,8 +19,8 @@ RUN touch oc_cli.tar.gz && \
 
 RUN curl -SsL --retry 5 $HELM_CLIENT_SOURCE | tar xz
 
-FROM phusion/baseimage:0.10.0
 
+FROM phusion/baseimage:0.10.0
 MAINTAINER Kevin Sandermann <kevin.sandermann@gmail.com>
 
 COPY --from=builder "~/download/linux-amd64/helm" "/usr/local/bin/helm"
