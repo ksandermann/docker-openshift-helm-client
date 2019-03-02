@@ -33,3 +33,5 @@ COPY --from=builder "~/download/openshift-origin-client-tools-v3.6.1-008f2d5-lin
 RUN chmod +x "/usr/local/bin/oc"
 
 RUN helm init --client-only
+
+CMD [ "helm" ]
